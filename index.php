@@ -1,4 +1,4 @@
 <?php
-include("CreateDB.php");
-CreateDB();
+include("DBphp/CreateDB.php");
+//CreateDB();
 ?>
