@@ -32,6 +32,7 @@ include("DBphp/CreateDB.php");
 
 <div class="login">
   <form action="DBphp/Login.php" method="POST">
+    <label>LOGIN</label><br>
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
     <br>
