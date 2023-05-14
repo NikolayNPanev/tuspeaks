@@ -1,0 +1,28 @@
+<head>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register - TU-Speaks</title>
+</head>
+<body>
+<div class="login">
+  <form action="Register.php" method="POST">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <br>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <br>
+    <label for="email"><b>E-Mail</b></label>
+    <input type="text" placeholder="mail@example.com" name="email" required>
+    <br>
+    <button type="submit">Register</button>
+    <br>
+  </form>
+  <br>
+  </div>
+</body>
+
+<?php
+print_r($_COOKIE);
+?>
