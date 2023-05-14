@@ -38,7 +38,7 @@ p{
   margin-left: 5%;
 }
 
-a {
+.navmenu a {
   text-decoration: none;
   text-align: center;
   display: block;
@@ -46,14 +46,14 @@ a {
   background-color: #000;
   color:#8a8684;
 }
-a:visited{
+.navmenu a:visited{
   text-decoration: none;
 }
-a:hover{
+.navmenu a:hover{
   background-color: #8a8684;
   color:#000;
 }
-a:active{
+.navmenu: a:active{
   background-color: lightgreen;
 }
 
@@ -67,4 +67,11 @@ a:active{
 }
 .askReg{
   font-size: 16px;
+}
+a{
+  color:#8a8684;
+  text-decoration: none;
+  align-self: left;
+  align-content: left;
+
 }

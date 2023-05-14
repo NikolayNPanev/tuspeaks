@@ -1,4 +1,5 @@
 <?php
+include("../DBphp/Rooms.php");
 	foreach($_COOKIE as $name => $password){
 		$username = $name;
 	}
@@ -10,7 +11,7 @@
   <link rel="stylesheet" href="../CSS/style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TU-Speaks</title>
+  <title>Room: <?php echo fetchRoomByID($_GET['id'])?></title>
 </head>
 
 
@@ -26,23 +27,10 @@
   <li><a href="forum.php">Home</a></li>
   </div>
 </ul>
-
-
 </div>
+<br>
 
 <?php
-include("../DBphp/Rooms.php");
-
-$result = fetchRooms();
-
-include("../DBphp/bdc.php");
-include("../DBphp/Disconnect.php");
-foreach($result as $room){
-	$row = mysql_fetch_row($result);
-	echo $row[1];
-}
-
-
-Disconnect($conn);
+$RoomID= $_GET['id'];
+  fetchPublicationsByRoomID($RoomID);
 ?>
-</body>
