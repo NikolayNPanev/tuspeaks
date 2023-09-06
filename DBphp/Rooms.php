@@ -28,7 +28,6 @@ function fetchRepliesByCommentID($ComID){
 //         //
 /////////////
 function fetchRooms(){
-	include("Disconnect.php");
 	include("bdc.php");
 
 	$query="SELECT * FROM rooms";
@@ -40,7 +39,7 @@ function fetchRooms(){
 	}
 	echo"<div class='roomlinks'>";
 	foreach($result as $room){
-		echo "<h2><a href='../Forum/Room.php?id=".$room['id']."'>".$room["title"]."</a></h2><br>";
+		echo "<h2><a href='Forum/Room.php?id=".$room['id']."'>".$room["title"]."</a></h2><br>";
 
 	}
 	echo"</div>";

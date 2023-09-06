@@ -4,7 +4,9 @@ $ID= $_COOKIE['ID'];
 include("Header.php");
 $RoomID=$_GET['id'];
 
-
+echo $ID;
+echo $RoomID;
+echo $username;
 ?>
 
 <form method="GET" action="CreatePublication.php">

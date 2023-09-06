@@ -11,7 +11,8 @@ if (strlen($_POST['username'])<4) {
              //echo "<script>alert('$errMsg')</script>";  
              //header("Location: Register.html");
 } 
-    $Username = $_POST["username"];  
+    $Username = $_POST["username"];
+    $Uname = $Username  ;
   
 
 if (strlen($_POST['password'])<5) {  

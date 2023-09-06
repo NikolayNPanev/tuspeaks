@@ -49,7 +49,6 @@ include("DBphp/CreateDB.php");
   </form>
   </div>
 <?php
-  print_r("$_COOKIE");
 ?>
 
 </body>

@@ -16,7 +16,7 @@ function createPublication($title,$content,$RoomID,$ID){
 }
 
 createPublication($title,$content,$RoomID,$ID);
-echo $RoomID,$ID,$title$content;
+echo $RoomID." ".$ID." ".$title." ".$content;
 //header("Location: Room.php?id=$RoomID");
 
 ?>
