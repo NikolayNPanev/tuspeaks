@@ -1,7 +1,10 @@
+input[type=submit] {
+  color: #000000;
+}
 body{
   margin-top: ;
   background-color: #000;
-  color:#8a8684;
+  /*color:#8a8684;*/
 }
 
 p{
@@ -73,5 +76,4 @@ a{
   text-decoration: none;
   align-self: left;
   align-content: left;
-
 }

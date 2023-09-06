@@ -14,10 +14,6 @@ $result = fetchRooms();
 	//echo $row[1];
 }*/
 //include("../DBphp/Rooms.php");
-
-if(fetchIDByUsername($id)){echo $id;}
-echo "<h1 style='color=white'>ID = $id</h1>
-<h1 style='color=white'>". $username." = $username</h1>";
 //addRoom($_COOKIE['id'],"Funky Room");
 
 //Disconnect($conn);

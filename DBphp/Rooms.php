@@ -39,8 +39,15 @@ function fetchRooms(){
 	}
 	echo"<div class='roomlinks'>";
 	foreach($result as $room){
-		echo "<h2><a href='Room.php?id=".$room['id']."'>".$room["title"]."</a></h2><br>";
-
+		echo "<h2><a href='Room.php?id=".$room['id']."'>".$room["title"]."</a></h2>";
+		$rid=$room['id'];
+		if($_COOKIE['user_id']==$room['users_id']){
+			echo "<form action='DeleteRoom.php' method='POST'>
+					<input type='hidden' name='roomid' value='$rid'>
+					<input type='submit' value='DELETE'></input>
+				</form>";
+		}
+		echo "<hr>";
 	}
 	echo"</div>";
     return $result;
