@@ -1,22 +1,28 @@
 <?php
 	include("Credentials.php");
-	$Username = $_POST['username'];
+	$Uname = $_POST['username'];
 	$Password = $_POST['password'];
 
-	$UserExists = !UsernameAvailable($Username);
+	$UserExists = !UsernameAvailable($Uname);
 	if(!$UserExists){
 		echo "<script>alert('Error: Username doesn\'t exist!'); location='../index.php'</script>";
+		include("../Session/CCookies.php");
 	}
 	else{
-		echo "I got there";
-		$CorrectPassword = CheckPassword($Username,$Password);
+		include("../DBphp/Rooms.php");
+		$CorrectPassword = CheckPassword($Uname,$Password);
 		if(!$CorrectPassword){
 			echo "<script>alert('Error: Wrong Password!'); location='../index.php'</script>";
+			include("../Session/CCookies.php");
 		}
 		else{
+
+			//$ID = fetchIDByUsername($Username);
 			include("../Session/tokenizer.php");
 			echo "<script>location='../index.php';</script>";
 		}
 	}
+
+
 
 ?>

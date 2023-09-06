@@ -1,5 +1,5 @@
 <?php
-include("Disconnect.php");
+
 function UsernameAvailable($Username){
 	include("bdc.php");
 
@@ -12,14 +12,12 @@ function UsernameAvailable($Username){
     //disconnect and return false
     if ($result->num_rows > 0)
     {
-      Disconnect($conn);
       return 0;
     }
   }
 
   //If the username is not taken yet,
   //disconnect and return true
-  Disconnect($conn);
   return 1;
 }
 
@@ -35,18 +33,18 @@ function EmailAvailable($Email){
     //disconnect and return false
     if ($result->num_rows > 0)
     {
-      Disconnect($conn);
+
       return 0;
     }
   }
-
   //If the email is not used yet,
   //disconnect and return true
-  Disconnect($conn);
+
   return 1;
 }
 
 function RegisterUser($ID,$Username,$Password,$Email){
+    
   //database credentials
   include("bdc.php");
   $sql = "INSERT INTO users(id,username,password,email) VALUES('$ID','$Username','$Password','$Email')";
@@ -61,10 +59,12 @@ function RegisterUser($ID,$Username,$Password,$Email){
     echo "Error: " . $sql . "<br>" . $conn->error;
     return 0;
   }
-  Disconnect($conn);
+
 }
 
 function CheckPassword($Username,$Password){
+
+  
   //database credentials
   include("bdc.php");
   //Ask the database for the entry with these username and password
@@ -77,13 +77,13 @@ function CheckPassword($Username,$Password){
     //disconnect from the database and return true(1)
     if ($result->num_rows > 0)
     {
-      Disconnect($conn);
+
       return 1;
     }
   }
   //if there isn't a user like this or the password doesn't match,
   //disconnect and return false(0)
-  Disconnect($conn);
+
   return 0;
 }
 ?>

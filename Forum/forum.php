@@ -1,48 +1,25 @@
 <?php
-	foreach($_COOKIE as $name => $password){
-		$username = $name;
-	}
+$username = $_COOKIE["user_name"];
+$id= $_COOKIE["user_id"];
 	
-	?>
+include("Header.php");
 
-<html>
-<head>
-  <link rel="stylesheet" href="../CSS/style.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TU-Speaks</title>
-</head>
-
-
-<body id="body">
-<div class="navbar">
-<ul>
-  <h1>TU Speaks - <?php echo $username?></h1>
-  <div class="navmenu">
-  <li><a>...</a></li>
-  <li><a href="../Session/Logout.php">Log Out</a></li>
-  <li><a href="#body">Account</a></li>
-  <li><a href="#body">Create Room</a></li>
-  <li><a href="forum.php">Home</a></li>
-  </div>
-</ul>
-
-
-</div>
-
-<?php
 include("../DBphp/Rooms.php");
 
 $result = fetchRooms();
 
-include("../DBphp/bdc.php");
-include("../DBphp/Disconnect.php");
-foreach($result as $room){
-	$row = mysql_fetch_row($result);
-	echo $row[1];
-}
+//include("../DBphp/bdc.php");
+/*foreach($result as $room){
+	$row = mysqli_fetch_row($result);
+	//echo $row[1];
+}*/
+//include("../DBphp/Rooms.php");
 
+if(fetchIDByUsername($id)){echo $id;}
+echo "<h1 style='color=white'>ID = $id</h1>
+<h1 style='color=white'>". $username." = $username</h1>";
+//addRoom($_COOKIE['id'],"Funky Room");
 
-Disconnect($conn);
+//Disconnect($conn);
 ?>
 </body>

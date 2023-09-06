@@ -6,7 +6,6 @@ include("../DBphp/Rooms.php");
 	
 include("Header.php");
 
-
-$PubID= $_GET['id'];
-  fetchCommentsByPubID($PubID);
+$ComID= $_GET['id'];
+  fetchRepliesByCommentID($ComID);
 ?>

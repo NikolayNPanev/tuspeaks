@@ -2,12 +2,17 @@
 //////////////////////////////////
 //                              //
 //  REQUIRES EXISTING VARIABLE  //
-//           $Username          //
-//           $Password          //
+//           $Uname             //
 //                              //
 //////////////////////////////////
+$exp = time()+86400;
 
-setcookie("$Username", $Password, time()+86400,"/","localhost");
+setcookie("user_name",$Uname, $exp,"/");
+//include("../BDphp/Rooms.php");
+
+$user_id=fetchIDByUsername($Uname);
+
+setcookie("user_id",$user_id, $exp,"/");
 //setcookie("$Username", $password, time()+15); //15 second test
 
 ?>
