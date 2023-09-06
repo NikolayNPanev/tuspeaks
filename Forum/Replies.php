@@ -8,5 +8,14 @@ include("Header.php");
 		$username = $name;
 	}
 $ComID= $_GET['id'];
+?>
+<form method="POST" action="CreateReply.php">
+  <br><label>Reply</label><br>
+  <textarea  rows="15" cols="30" name="content" placeholder="reply"></textarea><br>
+  <?php
+  echo "<input type='hidden' value='$ComID' name='comid'>";
+  echo "<input type='hidden' value='$ID' name='userid'>";
+  //echo "<input type='hidden' value='$ID' name='userid'>";
+  echo "<input type='submit' value='Reply to Comment'><br>";
   fetchRepliesByCommentID($ComID);
 ?>
