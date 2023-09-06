@@ -1,12 +1,16 @@
 <?php
+
+
 include("../DBphp/Rooms.php");
-	foreach($_COOKIE as $name => $password){
-		$username = $name;
-	}
+$RoomID= $_GET['id'];
+$ID = $_COOKIE["user_id"];
+$username = fetchUsernameByID($ID);
 	
 include("Header.php");
 
-$RoomID= $_GET['id'];
+	foreach($_COOKIE as $name => $password){
+		$username = $name;
+	}
   fetchPublicationByID($RoomID);
 ?>
 

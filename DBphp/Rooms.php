@@ -39,7 +39,7 @@ function fetchRooms(){
 	}
 	echo"<div class='roomlinks'>";
 	foreach($result as $room){
-		echo "<h2><a href='Forum/Room.php?id=".$room['id']."'>".$room["title"]."</a></h2><br>";
+		echo "<h2><a href='Room.php?id=".$room['id']."'>".$room["title"]."</a></h2><br>";
 
 	}
 	echo"</div>";
@@ -100,7 +100,7 @@ function fetchPublicationByID($PubID){
     //Get what the database answered
     $result = $conn->query($query);
     	foreach($result as $publication){
-			echo "<h1>Title: "
+			echo "<br>posted by: ".fetchUsernameByID($publication['users_id'])."<br>"."<h1>Title: "
 			.$publication['title']."</a></h1><br>
 			<h3>".$publication['content']."</h3>";
 			echo "<br><h4><a href='Comments.php?id=".$publication['id']."'>Comments</a></h4><br>";
@@ -178,7 +178,7 @@ function fetchIDByUsername($uname){
 //      //
 //////////
 function fetchBio($ID){
-	include("Disconnect.php");
+	//include("Disconnect.php");
 	include('bdc.php');
 
 	$query="SELECT * FROM user_bios WHERE users_id='$ID'";
@@ -189,8 +189,9 @@ function fetchBio($ID){
     	//Get what the database answered
     	$result = $conn->query($query);
     	foreach($result as $bio){
-    		echo "<h4>$content</h4><br>";
-			$content = $bio['content'];
+    		$content = $bio["content"];
+			//$content = $bio;
+    		//echo "<h4>$content</h4><br>";
 		}
 	}
 	//$content = $result[0 => "content"];
@@ -204,7 +205,7 @@ function fetchBio($ID){
 ///////////////
 
 function fetchAccountInfo($ID){
-	include("Disconnect.php");
+	//include("Disconnect.php");
 	include('bdc.php');
 
 	$query="SELECT * FROM users WHERE id='$ID'";
@@ -215,10 +216,10 @@ function fetchAccountInfo($ID){
     	$result = $conn->query($query);
 	}
 	$name = fetchUsernameByID($ID);
-	echo "<h1>$name</h1><br>
+	echo "<h2>Username:</h2><h1>$name</h1><br><hr>
 		  <h2>BIO:</h2><br>";
 	fetchBio($ID);
 	
-    Disconnect($conn);
+    //Disconnect($conn);
 }
 ?>

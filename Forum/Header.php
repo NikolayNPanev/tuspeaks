@@ -10,7 +10,7 @@
 <body id="body">
 <div class="navbar">
 <ul>
-  <h1>TU Speaks - <?php echo $username?></h1>
+  <h1>TU Speaks - <?php echo $username;?></h1>
   <div class="navmenu">
   <li><a>...</a></li>
   <li><a href="../Session/Logout.php">Log Out</a></li>
