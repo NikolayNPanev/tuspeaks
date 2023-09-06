@@ -17,5 +17,6 @@ $ComID= $_GET['id'];
   echo "<input type='hidden' value='$ID' name='userid'>";
   //echo "<input type='hidden' value='$ID' name='userid'>";
   echo "<input type='submit' value='Reply to Comment'><br>";
+  echo "</form>";
   fetchRepliesByCommentID($ComID);
 ?>

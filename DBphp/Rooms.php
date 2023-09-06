@@ -16,6 +16,14 @@ function fetchRepliesByCommentID($ComID){
 			echo "<h3>User ".fetchUsernameByID($reply['users_id'])." replied:</h3><br>
 			<h3>".$reply['content']."</h3><hr>";
 			//echo "<br><h4><a href='Replies.php?".$reply['id']."'>Replies</a></h4><hr>";
+			$repid = $reply['id'];
+			if($_COOKIE['user_id']==$reply['users_id']){
+				echo "<form action='DeleteReply.php' method='POST'>
+					<input type='hidden' name='repid' value='$repid'>
+					<input type='submit' value='DELETE'></input>
+				</form>";
+			}
+			echo "<hr>";
 		}
 	}
 	Disconnect($conn);
@@ -94,6 +102,14 @@ function fetchPublicationsByRoomID($RoomID){
 			echo "<h2><a href='../Forum/Publication.php?id="
 			.$publication['id']."'>"
 			.$publication['title']."</a></h2><br>";
+			$pid = $publication['id'];
+			if($_COOKIE['user_id']==$publication['users_id']){
+			echo "<form action='DeletePublication.php' method='POST'>
+					<input type='hidden' name='pubid' value='$pid'>
+					<input type='submit' value='DELETE'></input>
+				</form>";
+		}
+		echo "<hr>";
 		}
 	}
 	Disconnect($conn);
@@ -132,7 +148,15 @@ function fetchCommentsByPubID($PubID){
     	foreach($result as $comment){
 			echo "<h3>User: ".fetchUsernameByID($comment['users_id'])."</h3><br>
 			<h3>".$comment['content']."</h3>";
-			echo "<br><h4><a href='Replies.php?id=".$comment['id']."'>Replies</a></h4><hr>";
+			echo "<br><h4><a href='Replies.php?id=".$comment['id']."'>Replies</a></h4>";
+			$comid = $comment['id'];
+			if($_COOKIE['user_id']==$comment['users_id']){
+				echo "<form action='DeleteComment.php' method='GET'>
+					<input type='hidden' name='comid' value='$comid'>
+					<input type='submit' value='DELETE'></input>
+				</form>";
+			}
+			echo "<hr>";
 		}
 	}
 	Disconnect($conn);

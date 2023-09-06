@@ -18,6 +18,6 @@ include("Header.php");
   echo "<input type='hidden' value='$PubID' name='pubid'>";
   echo "<input type='hidden' value='$ID' name='userid'>";
   echo "<input type='submit' value='Submit Comment'><br>";
+  echo "</form>";
   fetchCommentsByPubID($PubID);
 ?>
-</form>

@@ -7,7 +7,7 @@ function createComment($content,$PubID,$ID){
 	include('../DBphp/bdc.php');
 	$query="INSERT INTO comments(content,publications_id,users_id) VALUES('$content', '$PubID', '$ID')";
 	if(mysqli_query($conn, $query)){
-    $result = $conn->query($query);
+    //$result = $conn->query($query);
 	}
 	//Disconnect($conn);
 }
