@@ -1,26 +1,26 @@
 # tuspeaks
 
-## - ENTER A ROOM
+### - ENTER A ROOM
 
-### Find a topic you like!
+#### Find a topic you like!
 
-## - PUBLISH
+### - PUBLISH
 
-### Express yourself!
+#### Express yourself!
 
-## - COMMENT
+### - COMMENT
 
-### Give feedback!
+#### Give feedback!
 
-## - REPLY!
+### - REPLY!
 
-### Have a conversation!
+#### Have a conversation!
 
-##
+###
 
-## Join the active community of students at TU-Varna, talk about everything you love(games, tech, movies, science)!
+### Join the active community of students at TU-Varna, talk about everything you love(games, tech, movies, science)!
 
-## All your colleagues are waiting for you!
+### All your colleagues are waiting for you!
 
 # Sign up now!
 
