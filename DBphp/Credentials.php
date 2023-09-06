@@ -48,15 +48,24 @@ function RegisterUser($ID,$Username,$Password,$Email){
   //database credentials
   include("bdc.php");
   $sql = "INSERT INTO users(id,username,password,email) VALUES('$ID','$Username','$Password','$Email')";
+  $sql2="INSERT INTO user_bios(content, users_id) VALUES('','$ID')";
 
   //On a successfull insert
   if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } 
+  //On a failed insert
+  else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    return 0;
+  }
+    if ($conn->query($sql2) === TRUE) {
     echo "New record created successfully";
     return 1;
   } 
   //On a failed insert
   else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql2 . "<br>" . $conn->error;
     return 0;
   }
 

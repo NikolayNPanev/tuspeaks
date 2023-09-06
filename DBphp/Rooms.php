@@ -196,6 +196,7 @@ function fetchBio($ID){
 	}
 	//$content = $result[0 => "content"];
 	echo "<h4>$content</h4><br>";
+	return $content;
 }
 
 ///////////////
