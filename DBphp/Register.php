@@ -1,5 +1,6 @@
 <?php
 include("Credentials.php");
+include("Rooms.php");
 
 function CreateID($Username){
     return time()+ord($Username[0]);
@@ -49,8 +50,10 @@ else{
     echo "<script>alert('Error: Failed to register user!'); location='Register.html';
     </script>";
     }else{
+        $user_id = fetchIDByUsername($Uname);
         include("../Session/CCookies.php");
         include("../Session/tokenizer.php");
+        tokenize($Uname, $user_id);
         echo "<script>location='../index.php';</script>";
 
     }

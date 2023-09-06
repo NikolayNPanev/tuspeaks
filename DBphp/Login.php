@@ -18,7 +18,9 @@
 		else{
 
 			//$ID = fetchIDByUsername($Username);
+			$user_id=fetchIDByUsername($Uname);
 			include("../Session/tokenizer.php");
+			tokenize($Uname, $user_id);
 			echo "<script>location='../index.php';</script>";
 		}
 	}
