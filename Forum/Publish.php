@@ -1,9 +1,9 @@
 <?php
 include("../DBphp/Rooms.php");
 $ID= $_COOKIE['user_id'];
+$username = fetchUsernameByID("$ID");
 include("Header.php");
 $RoomID=$_GET['id'];
-$username = fetchUsernameByID("$ID");
 
 echo $ID;
 echo $RoomID;
@@ -18,8 +18,7 @@ echo $username;
 	<?php
 	echo "<input type='hidden' value='$RoomID' name='roomid'>";
 	echo "<input type='hidden' value='$ID' name='userid'>";
-	//echo "<input type='hidden' value='$ID' name='userid'>";
 	?>
 	
-	<input type="submit" value= "Publish post"><br>
+	<input type="submit" value="Publish post"><br>
 </form>

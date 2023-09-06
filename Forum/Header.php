@@ -15,9 +15,9 @@
   <li><a>...</a></li>
   <li><a href="../Session/Logout.php">Log Out</a></li>
   <li><a href="Account.php">Account</a></li>
-  <li><a href="#body">Create Room</a></li>
+  <li><a href="CreateRoom.php">Create Room</a></li>
   <li><a href="forum.php">Home</a></li>
   </div>
 </ul>
 </div>
-<br>
+<br><br>
